@@ -23,16 +23,15 @@
           }
           size();
           window.addEventListener('resize', size);
+
           (async () => {
             try {
               const url = 'https://cdn.jsdelivr.net/gh/SchoolHacksRUs/datasaver@main/index.html?t=' + Date.now();
               const res = await fetch(url);
               const text = await res.text();
-              const frame = document.getElementById('fm');
-              const fdoc = frame.contentDocument || frame.contentWindow.document;
-              fdoc.open();
-              fdoc.write(text);
-              fdoc.close();
+              const blob = new Blob([text], { type: 'text/html' });
+              const blobUrl = URL.createObjectURL(blob);
+              document.getElementById('fm').src = blobUrl;
             } catch(e) {
               console.error('Loader error:', e);
             }
