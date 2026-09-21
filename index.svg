@@ -10,11 +10,7 @@
       </xhtml:style>
     </xhtml:head>
     <xhtml:body>
-      <xhtml:iframe id="fm"
-        src="https://cdn.jsdelivr.net/gh/SchoolHacksRUs/datasaver@main/index.html"
-        sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-forms allow-modals allow-downloads"
-        referrerpolicy="no-referrer">
-      </xhtml:iframe>
+      <xhtml:iframe id="fm" src="about:blank"></xhtml:iframe>
       <xhtml:script>
       //<![CDATA[
         (function() {
@@ -27,6 +23,20 @@
           }
           size();
           window.addEventListener('resize', size);
+          (async () => {
+            try {
+              const url = 'https://cdn.jsdelivr.net/gh/SchoolHacksRUs/datasaver@main/index.html?t=' + Date.now();
+              const res = await fetch(url);
+              const text = await res.text();
+              const frame = document.getElementById('fm');
+              const fdoc = frame.contentDocument || frame.contentWindow.document;
+              fdoc.open();
+              fdoc.write(text);
+              fdoc.close();
+            } catch(e) {
+              console.error('Loader error:', e);
+            }
+          })();
         })();
       //]]>
       </xhtml:script>
