@@ -1,5 +1,5 @@
 {
-  "name": "webportrip/datasaver",
+  "name": "@webportrip/datasaver",
   "version": "1.0.2",
   "files": ["index.svg", "index.html"]
 }
