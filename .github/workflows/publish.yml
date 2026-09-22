@@ -18,4 +18,5 @@ jobs:
           node-version: '20'
           registry-url: 'https://registry.npmjs.org'
       - run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+      - run: npm whoami
       - run: npm publish --access public
