@@ -1,5 +1,9 @@
 {
   "name": "@webportrip/datasaver",
-  "version": "1.0.4",
-  "files": ["index.svg", "index.html"]
+  "version": "1.0.5",
+  "files": ["index.svg", "index.html"],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SchoolHacksRUs/datasaver.git"
+  }
 }
