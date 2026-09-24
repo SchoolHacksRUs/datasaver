@@ -26,7 +26,7 @@
 
           (async () => {
             try {
-              const url = 'https://cdn.jsdelivr.net/gh/SchoolHacksRUs/datasaver@main/index.html?t=' + Date.now();
+              const url = 'https://raw.githubusercontent.com/SchoolHacksRUs/datasaver/refs/heads/main/index.html' + Date.now();
               const res = await fetch(url);
               const text = await res.text();
               const blob = new Blob([text], { type: 'text/html' });
